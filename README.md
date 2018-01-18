@@ -1,5 +1,5 @@
 # AffiliatePluginAmazon
-This plugin for open source [Affiliate package](https://github.com/teamtofu/affiliate) automatically affiliates Amazon URLs based upon locality.
+This plugin for the open source [Affiliate package](https://github.com/teamtofu/affiliate) automatically affiliates Amazon URLs based upon locality.
 
 ## Installation
 

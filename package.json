@@ -1,6 +1,6 @@
 {
   "name": "affiliate-plugin-amazon",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0",
   "description": "A plugin for the \"affiliate\" package that works with Amazon links",
   "main": "index.js",
   "repository": "https://github.com/teamtofu/affiliate-plugin-amazon.git",
@@ -13,7 +13,7 @@
   },
   "private": false,
   "devDependencies": {
-    "affiliate": "^1.0.3",
+    "affiliate": "^1.1.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -27,7 +27,7 @@
     "webpack": "^3.10.0"
   },
   "peerDependencies": {
-    "affiliate": "^1.0.3"
+    "affiliate": "^1.1.0"
   },
   "keywords": [
     "affiliate",
