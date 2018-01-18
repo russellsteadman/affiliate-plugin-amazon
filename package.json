@@ -1,6 +1,6 @@
 {
   "name": "affiliate-plugin-amazon",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "description": "A plugin for the \"affiliate\" package that works with Amazon links",
   "main": "index.js",
   "repository": "https://github.com/teamtofu/affiliate-plugin-amazon.git",
@@ -29,6 +29,19 @@
   "peerDependencies": {
     "affiliate": "^1.0.3"
   },
+  "keywords": [
+    "affiliate",
+    "amazon",
+    "purchases",
+    "link",
+    "affiliation",
+    "refer",
+    "referral",
+    "marketing",
+    "shopping",
+    "ads",
+    "advertisement"
+  ],
   "scripts": {
     "build": "webpack"
   }
