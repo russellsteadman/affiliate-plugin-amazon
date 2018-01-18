@@ -1,0 +1,10 @@
+.history/
+node_modules/
+.git/
+.gitignore
+yarn.lock
+src/
+test/
+webpack.config.js
+.babelrc
+docs/
