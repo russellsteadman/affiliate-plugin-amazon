@@ -2,8 +2,14 @@ var extend = require('./extend');
 
 var projectSite = 'https://affiliate.js.org/plugins/amazon';
 
-var log = console.log.bind(window, 'AMZNPlugin: ');
-var error = console.error.bind(window, 'AMZNPlugin: ');
+var log = function (isError) {
+    if (typeof console === 'object') {
+        var args = Array.prototype.slice.call(arguments, 1);
+        var logFunc = isError ? console.error : console.log;
+        logFunc = Function.prototype.bind.call(logFunc, console);
+        logFunc.apply(console, ['[AMZNPlugin] '].concat(args));
+    }
+};
 
 var Plugin = function (Affiliate, config) {
 
@@ -28,8 +34,8 @@ var Plugin = function (Affiliate, config) {
     };
 
     config = extend(basic, config);
-    if (config.debug) log('Read the docs at ' + projectSite);
-    if (!config.tags.us) return error('Config must contain a US tag.');
+    if (config.debug) log(false, 'Read the docs at ' + projectSite);
+    if (!config.tags.us) return log(true, 'Config must contain a US tag.');
 
     var tagList = {
         us: {
@@ -107,7 +113,7 @@ var Plugin = function (Affiliate, config) {
     }
     
     if (!config.tags[config.locale]) config.locale = 'us';
-    if (config.debug) log('Locale set to "' + config.locale + '".');
+    if (config.debug) log(false, 'Locale set to "' + config.locale + '".');
 
     var hosts = [];
     for (var i in tagList) {
@@ -145,8 +151,7 @@ var Plugin = function (Affiliate, config) {
         }
     }
 
-    var instance = Affiliate(affSettings);
-    return instance;
+    return Affiliate(affSettings);
 };
 
 module.exports = Plugin;

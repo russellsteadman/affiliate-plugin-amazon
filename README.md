@@ -3,25 +3,16 @@ This plugin for the open source [Affiliate package](https://github.com/teamtofu/
 
 ## Installation
 
-With NPM
 ```bash
-$ npm i -S affiliate-plugin-amazon
+$ npm i -S affiliate affiliate-plugin-amazon
+$ yarn add affiliate affiliate-plugin-amazon
+$ bower install -S affiliate affiliate-plugin-amazon
 ```
 
-With Yarn
-```bash
-$ yarn add affiliate-plugin-amazon
-```
-
-With a CDN
+Or use a CDN
 ```html
-<script src="https://unpkg.com/affiliate@latest/dist/affiliate.js"></script>
-<script src="https://unpkg.com/affiliate-plugin-amazon@latest/dist/plugin.js"></script>
-```
-
-With Bower
-```bash
-$ bower install -S affiliate-plugin-amazon
+<script src="https://cdn.jsdelivr.net/npm/affiliate/dist/affiliate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/affiliate-plugin-amazon/dist/plugin.js"></script>
 ```
 
 ## What It Can Do
@@ -49,7 +40,15 @@ Or url modification can be disabled:
 
 ## Documentation
 
-[Read it!](https://affiliate.js.org/plugins/amazon)
+Plugin documentation available here: [affiliate.js.org/plugins/amazon](https://affiliate.js.org/plugins/amazon).
+
+Affiliate is simple and quick to set up, even for more complex usage. Read the docs at: [affiliate.js.org](https://affiliate.js.org/).
+
+### Big Thanks
+
+[![Sauce Labs](https://affiliate.js.org/test/sauce/saucelabs.png)](https://saucelabs.com/)
+
+Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs](https://saucelabs.com/)!
 
 ## License
 

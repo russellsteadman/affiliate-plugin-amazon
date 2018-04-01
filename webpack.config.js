@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'), 
     filename: 'plugin.js',
     library: 'AffiliatePluginAmazon',
-    libraryTarget: 'umd'
+    libraryTarget: 'window'
   },
 
   module: {
@@ -16,21 +16,19 @@ module.exports = {
             test: /\.js$/,
             exclude: /(node_modules|bower_components)/,
             use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: [
-                        "env",
-                        "react",
-                        "stage-0"
-                    ],
-                    plugins: [
-                        "transform-class-properties",
-                        "transform-decorators",
-                        "transform-react-constant-elements",
-                        "transform-react-inline-elements"
-                    ]
-                }
-            }
+              loader: 'babel-loader',
+              options: {
+                  presets: [
+                    ['env', {
+                      'targets': {
+                        'browsers': ['last 4 versions', 'safari >= 7', 'ie >= 9']
+                      }
+                    }]
+                  ],
+                  plugins: [
+                  ]
+              }
+          }
         }
     ]
   },

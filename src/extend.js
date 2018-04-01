@@ -23,7 +23,7 @@ var Extend = function () {
         deep = target;
 
         target = arguments[i] || {};
-        i++;
+        i += 1;
     }
 
     if (typeof target !== "object" && !(typeof target === "function" && typeof target.nodeType !== "number")) {
@@ -32,7 +32,7 @@ var Extend = function () {
 
     if (i === length) {
         target = this;
-        i--;
+        i -= 1;
     }
 
     for (; i < length; i++) {
