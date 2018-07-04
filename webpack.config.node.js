@@ -4,9 +4,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'), 
-    filename: 'plugin.js',
-    library: 'AffiliatePluginAmazon',
-    libraryTarget: 'window'
+    filename: 'plugin.node.js',
+    libraryTarget: 'commonjs2'
   },
 
   module: {
@@ -42,7 +41,6 @@ module.exports = {
   },
 
   context: __dirname,
-  target: 'web',
   mode: 'production',
 
   plugins: []

@@ -6,13 +6,6 @@ This plugin for the open source [Affiliate package](https://github.com/teamtofu/
 ```bash
 $ npm i -S affiliate affiliate-plugin-amazon
 $ yarn add affiliate affiliate-plugin-amazon
-$ bower install -S affiliate affiliate-plugin-amazon
-```
-
-Or use a CDN
-```html
-<script src="https://cdn.jsdelivr.net/npm/affiliate/dist/affiliate.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/affiliate-plugin-amazon/dist/plugin.js"></script>
 ```
 
 ## What It Can Do
@@ -25,7 +18,7 @@ Affiliate can modify the following link into any of the others.
 <a href="https://www.amazon.co.uk/dp/B01MRZFBBH">UK</a>
 ```
 
-All links would become (if the user's primary language is Italian):
+If the user's primary language is Italian, all links would become:
 ```html
 <a href="https://www.amazon.it/dp/B01MRZFBBH?tag=italian-tag">My Locality</a>
 ```
@@ -52,8 +45,8 @@ Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs](https
 
 ## License
 
-MIT (C) [Russell Steadman](https://teamtofu.github.io/contact). Learn more in the [LICENSE](https://github.com/teamtofu/affiliate-plugin-amazon/blob/master/LICENSE) file.
+MIT (C) [Russell Steadman](https://teamtofu.github.io/contact/). Learn more in the [LICENSE](https://github.com/teamtofu/affiliate-plugin-amazon/blob/master/LICENSE) file.
 
 ## Support Me
 
-Like this project? Buy me a [cup of coffee](https://www.paypal.me/RussellSteadman/3). &#x2615; Here are more of my [projects](https://teamtofu.github.io/).
+Like this project? Buy me a [cup of coffee](https://www.paypal.me/RussellSteadman/3) or [contribute](https://github.com/teamtofu/affiliate-plugin-amazon). &#x2615; Here are more of my [projects](https://teamtofu.github.io/).

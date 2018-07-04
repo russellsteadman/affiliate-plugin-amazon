@@ -11,5 +11,6 @@ module.exports = {
     libraryTarget: 'umd'
   },
   context: __dirname,
-  target: 'web'
+  target: 'web',
+  mode: 'development'
 };

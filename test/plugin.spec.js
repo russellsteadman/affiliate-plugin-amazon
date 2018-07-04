@@ -1,6 +1,6 @@
 /* global it, describe, Affiliate, AffiliatePluginAmazon, expect */
 
-var setLang = function (window, languages) {
+var setLang = function (languages) {
     var prop = { get: function () { return languages; } };
     try {
         Object.defineProperty(window.navigator, 'languages', prop);
@@ -11,7 +11,7 @@ var setLang = function (window, languages) {
     }
 };
 
-setLang(window, ['es-mx', 'pt-BR', 'en-US']);
+setLang(['es-mx', 'pt-BR', 'en-US']);
 
 /*
 var plugin = AffiliatePluginAmazon(Affiliate, {

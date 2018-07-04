@@ -1,8 +1,6 @@
-var extend = require('./extend');
+const projectSite = 'https://affiliate.js.org/plugins/amazon';
 
-var projectSite = 'https://affiliate.js.org/plugins/amazon';
-
-var log = function (isError) {
+const log = function (isError) {
     if (typeof console === 'object') {
         var args = Array.prototype.slice.call(arguments, 1);
         var logFunc = isError ? console.error : console.log;
@@ -11,9 +9,8 @@ var log = function (isError) {
     }
 };
 
-var Plugin = function (Affiliate, config) {
-
-    var basic = {
+const Plugin = (Affiliate, config) => {
+    let basic = {
         tags: {
             us: '',
             gb: '',
@@ -33,11 +30,13 @@ var Plugin = function (Affiliate, config) {
         modifyDomain: true
     };
 
-    config = extend(basic, config);
+    if (config && config.tags) config.tags = {...basic.tags, ...config.tags};
+    config = {...basic, ...config};
+
     if (config.debug) log(false, 'Read the docs at ' + projectSite);
     if (!config.tags.us) return log(true, 'Config must contain a US tag.');
 
-    var tagList = {
+    let tagList = {
         us: {
             tld: 'com',
             la: ['en']
@@ -88,19 +87,16 @@ var Plugin = function (Affiliate, config) {
         }
     };
 
-    for (var i in tagList) {
-        var domain = 'amazon.' + tagList[i].tld;
+    for (let i in tagList) {
+        let domain = 'amazon.' + tagList[i].tld;
         tagList[i].hosts = [domain, 'www.' + domain];
     }
 
     if (!config.locale) {
-        var languages = window.navigator.languages.reduce(function (a, b) {
-            a.push(b.toLowerCase());
-            return a;
-        }, []);
-        for (var i in languages) {
-            var cc = languages[i].split('-')[1];
-            for (var o in tagList) {
+        let languages = window.navigator.languages.map((a) => (a.toLowerCase()));
+        for (let i in languages) {
+            let cc = languages[i].split('-')[1];
+            for (let o in tagList) {
                 if (o === cc || tagList[o].la.indexOf(languages[i]) !== -1) {
                     config.locale = o;
                     break;
@@ -115,22 +111,23 @@ var Plugin = function (Affiliate, config) {
     if (!config.tags[config.locale]) config.locale = 'us';
     if (config.debug) log(false, 'Locale set to "' + config.locale + '".');
 
-    var hosts = [];
-    for (var i in tagList) {
+    let hosts = [];
+    for (let i in tagList) {
         hosts = hosts.concat(tagList[i].hosts);
     }
 
-    var affSettings = {
+    let affSettings = {
         tags: [
             {
                 hosts: hosts,
                 query: {
                     tag: config.tags[config.locale]
                 },
-                modifyHost: function (host) {
-                    var hasWWW = 0;
-                    if (host.substr(0, 3) === 'www') hasWWW = 1;
-                    return tagList[config.locale].hosts[hasWWW];
+                modify: (url) => {
+                    let hasWWW = 0;
+                    if (url.hostname.substr(0, 3) === 'www') hasWWW = 1;
+                    url.set('hostname', tagList[config.locale].hosts[hasWWW]);
+                    return url;
                 }
             }
         ],
@@ -139,8 +136,8 @@ var Plugin = function (Affiliate, config) {
 
     if (config.modifyDomain === false) {
         affSettings.tags = [];
-        for (var i in config.tags) {
-            if (tagList[i]) {
+        for (let i in config.tags) {
+            if (tagList[i] && config.tags[i]) {
                 affSettings.tags.push({
                     hosts: tagList[i].hosts,
                     query: {

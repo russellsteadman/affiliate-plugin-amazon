@@ -1,6 +1,6 @@
 {
   "name": "affiliate-plugin-amazon",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "A plugin for the \"affiliate\" package that works with Amazon links",
   "main": "index.js",
   "repository": "https://github.com/teamtofu/affiliate-plugin-amazon.git",
@@ -13,15 +13,17 @@
   },
   "private": false,
   "devDependencies": {
-    "affiliate": "^1.2.1",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "uglifyjs-webpack-plugin": "^1.1.5",
-    "webpack": "^3.10.0"
+    "affiliate": "^2.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.14.0",
+    "webpack-command": "^0.4.0"
   },
   "peerDependencies": {
-    "affiliate": "^1.2.1"
+    "affiliate": "^2.0.0"
   },
   "keywords": [
     "affiliate",
@@ -37,7 +39,7 @@
     "advertisement"
   ],
   "scripts": {
-    "build": "webpack && webpack --config test/webpack/webpack.config.js",
+    "build": "webpack && webpack --config webpack.config.node.js && webpack --config test/webpack/webpack.config.js",
     "test-cred": "sh ./test/sauce/cred.sh",
     "test": "sh ./test/sauce/run.sh",
     "test-webpack": "sh ./test/sauce/run-webpack.sh"

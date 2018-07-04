@@ -5,5 +5,6 @@ node_modules/
 yarn.lock
 test/
 webpack.config.js
+webpack.config.node.js
 .babelrc
 docs/
