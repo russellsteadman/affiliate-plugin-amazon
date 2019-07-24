@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: '../src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'), 
+    path: path.resolve(__dirname, '../dist'), 
     filename: 'plugin.node.js',
     libraryTarget: 'commonjs2'
   },
@@ -16,16 +16,7 @@ module.exports = {
             use: {
               loader: 'babel-loader',
               options: {
-                  presets: [
-                    ['env', {
-                      targets: {
-                        browsers: ['last 4 versions', 'safari >= 7', 'ie >= 9']
-                      }
-                    }]
-                  ],
-                  plugins: [
-                    'transform-object-rest-spread'
-                  ]
+                rootMode: 'upward'
               }
           }
         }
@@ -35,7 +26,7 @@ module.exports = {
   resolve: {
     modules: [
       'node_modules',
-      path.resolve(__dirname, 'src')
+      path.resolve(__dirname, '../src')
     ],
     extensions: ['.js', '.json', '.jsx', '.css']
   },
@@ -44,4 +35,4 @@ module.exports = {
   mode: 'production',
 
   plugins: []
-}
+};

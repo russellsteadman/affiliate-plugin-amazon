@@ -89,7 +89,7 @@ const Plugin = (Affiliate, config) => {
 
     for (let i in tagList) {
         let domain = 'amazon.' + tagList[i].tld;
-        tagList[i].hosts = [domain, 'www.' + domain];
+        tagList[i].hosts = [domain, 'www.' + domain, 'smile.' + domain];
     }
 
     if (!config.locale) {
@@ -148,7 +148,7 @@ const Plugin = (Affiliate, config) => {
         }
     }
 
-    return Affiliate(affSettings);
+    return Affiliate.create(affSettings);
 };
 
 module.exports = Plugin;

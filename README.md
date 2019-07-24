@@ -1,4 +1,5 @@
 # AffiliatePluginAmazon
+
 This plugin for the open source [Affiliate package](https://github.com/teamtofu/affiliate) automatically affiliates Amazon URLs based upon locality.
 
 ## Installation
@@ -37,16 +38,6 @@ Plugin documentation available here: [affiliate.js.org/plugins/amazon](https://a
 
 Affiliate is simple and quick to set up, even for more complex usage. Read the docs at: [affiliate.js.org](https://affiliate.js.org/).
 
-### Big Thanks
-
-[![Sauce Labs](https://affiliate.js.org/test/sauce/saucelabs.png)](https://saucelabs.com/)
-
-Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs](https://saucelabs.com/)!
-
 ## License
 
-MIT (C) [Russell Steadman](https://teamtofu.github.io/contact/). Learn more in the [LICENSE](https://github.com/teamtofu/affiliate-plugin-amazon/blob/master/LICENSE) file.
-
-## Support Me
-
-Like this project? Buy me a [cup of coffee](https://www.paypal.me/RussellSteadman/3) or [contribute](https://github.com/teamtofu/affiliate-plugin-amazon). &#x2615; Here are more of my [projects](https://teamtofu.github.io/).
+MIT (C) [Russell Steadman](https://www.russellsteadman.com/?utm_source=aff_amz_repo&utm_medium=readme_copy). Learn more in the [LICENSE](https://github.com/teamtofu/affiliate-plugin-amazon/blob/master/LICENSE) file.
